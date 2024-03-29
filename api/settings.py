@@ -118,6 +118,11 @@ else:
     ]
 
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    'https://socialorange-8e2adf553f1c.herokuapp.com',
+    'https://3000-andersh82-socialorange-bnp0ic81idd.ws-eu110.gitpod.io',
+]
 
 ROOT_URLCONF = 'api.urls'
 
