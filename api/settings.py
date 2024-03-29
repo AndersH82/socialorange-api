@@ -60,7 +60,10 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'socialorangeapi-e92b8d7040bd.herokuapp.com']
+ALLOWED_HOSTS = ['localhost',
+'socialorangeapi-e92b8d7040bd.herokuapp.com',
+'8000-andersh82-socialorangea-4urawv4vi1f.ws-eu110.gitpod.io',
+]
 
 
 # Application definition
