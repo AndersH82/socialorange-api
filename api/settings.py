@@ -116,7 +116,7 @@ if 'CLIENT_ORIGIN' in os.environ:
 else:
     CORS_ALLOWED_ORIGINS = [
         'https://socialorange-8e2adf553f1c.herokuapp.com',
-        'https://3000-andersh82-socialorange-bnp0ic81idd.ws-eu110.gitpod.io',
+        'https://3000-andersh82-socialorange-52htwm8ewta.ws-eu114.gitpod.io',
     ]
 
 CORS_ALLOWED_ORIGIN_REGEXES = [
