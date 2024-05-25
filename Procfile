@@ -1,2 +1,2 @@
 release: python manage.py makemigrations && python manage.py migrate
-web: gunicorn socialorange-api.wsgi:application
+web: gunicorn socialorange-api.wsgi
