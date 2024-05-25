@@ -53,15 +53,18 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
     'localhost',
-    '8000-andersh82-socialorangea-4urawv4vi1f.ws-eu110.gitpod.io',
+    '8000-andersh82-socialorangea-wzh4t0giyfx.ws-eu114.gitpod.io',
     '127.0.0.1',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-andersh82-socialorangea-wzh4t0giyfx.ws-eu114.gitpod.io',
+]
 
 # Application definition
 
