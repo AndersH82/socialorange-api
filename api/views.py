@@ -1,7 +1,9 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .settings import (
-    JWT_AUTH_COOKIE, JWT_AUTH_REFRESH_COOKIE, JWT_AUTH_SAMESITE,
+    JWT_AUTH_COOKIE,
+    JWT_AUTH_REFRESH_COOKIE,
+    JWT_AUTH_SAMESITE,
     JWT_AUTH_SECURE,
 )
 
@@ -16,6 +18,7 @@ def root_route(request):
 # dj-rest-auth logout view fix
 @api_view(['POST'])
 def logout_route(request):
+    print("Logout route called")
     response = Response()
     response.set_cookie(
         key=JWT_AUTH_COOKIE,
