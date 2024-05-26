@@ -115,8 +115,8 @@ if 'CLIENT_ORIGIN' in os.environ:
     ]
 else:
     CORS_ALLOWED_ORIGINS = [
-        'https://3000-andersh82-socialorange-52htwm8ewta.ws-eu114.gitpod.io',
-        'http://localhost:3000',
+        '3000-andersh82-socialorange-52htwm8ewta.ws-eu114.gitpod.io',
+        'localhost:3000',
     ]
 
 CORS_ALLOW_CREDENTIALS = True
