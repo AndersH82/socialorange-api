@@ -109,14 +109,16 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
-if 'CLIENT_ORIGIN' in os.environ:
+if 'CLIENT_ORIGIN' in os.environ and 'CLIENT_ORIGIN_LOCAL' in os.environ:
     CORS_ALLOWED_ORIGINS = [
-        os.environ.get('CLIENT_ORIGIN')
+        os.environ.get('CLIENT_ORIGIN'),
+        os.environ.get('CLIENT_ORIGIN_LOCAL')
     ]
 else:
     CORS_ALLOWED_ORIGINS = [
-        '3000-andersh82-socialorange-52htwm8ewta.ws-eu114.gitpod.io',
-        'localhost:3000',
+        'https://socialorange-8e2adf553f1c.herokuapp.com',
+        'https://3000-andersh82-socialorange-52htwm8ewta.ws-eu114.gitpod.io',
+        'http://localhost:3000',
     ]
 
 CORS_ALLOW_CREDENTIALS = True
