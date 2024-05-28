@@ -10,7 +10,6 @@ urlpatterns = [
     path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
     path('comments/', include('comments.urls')),
     path('followers/', include('followers.urls')),
-    path('friendships/', include('friendships.urls')),
     path('likes/', include('likes.urls')),
     path('posts/', include('posts.urls')),
     path('profiles/', include('profiles.urls')),
