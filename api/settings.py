@@ -19,6 +19,8 @@ import re
 if os.path.exists('env.py'):
     import env
 
+APPEND_SLASH = True
+
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
 }
