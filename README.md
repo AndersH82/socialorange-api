@@ -1,39 +1,115 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# API
 
-Welcome,
+## Getting Started
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+To get started with this project, follow the steps below:
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+### Prerequisites
 
-## Codeanywhere Reminders
+Ensure you have the following installed:
+- Python 3.x
+- Django
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+### Setup
 
-`python3 -m http.server`
+1. **Clone the repository:**
+   
+   git clone [repository-url](https://github.com/AndersH82/socialorange-api.git)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+   cd [repository-directory](https://github.com/AndersH82/socialorange-api)
+2. Install dependencies:
+    pip install -r requirements.txt
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+3. Apply migrations:
+    python manage.py migrate
+4. Run the development server:
+    python manage.py runserver
+5. Access the application:
+    Open your web browser and go to http://127.0.0.1:8000/.
 
-`http_server`
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Project Structure
+The project is organized into multiple directories, each representing a distinct part of the system:
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+- ### api: Contains the main Django application files.
+- asgi.py
+- settings.py
+- urls.py
+- views.py
+- comments: Manages the commenting functionality.
+- admin.py
+- apps.py
+- models.py
+- serializers.py
+- tests.py
+- urls.py
+- views.py
+- followers: Manages the following functionality.
+- admin.py
+- apps.py
+- models.py
+- serializers.py
+- tests.py
+- urls.py
+- views.py
+- ### likes: Manages the liking functionality.
+- admin.py
+- apps.py
+- models.py
+- serializers.py
+- tests.py
+- urls.py
+- views.py
+- ### posts: Manages the posting functionality.
+- admin.py
+- apps.py
+- models.py
+- serializers.py
+- tests.py
+- urls.py
+- views.py
+- ### profiles: Manages user profiles.
+- admin.py
+- apps.py
+- models.py
+- serializers.py
+- tests.py
+- urls.py
+- views.py
+- migrations/0002_alter_profile_image.py
+- ### migrations: Contains migration files for managing database schema changes.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+### Running Frontend Applications
+To run a frontend application (HTML, CSS, JavaScript), use the following command in the terminal:
+python3 -m http.server
+Or use the alias:
+http_server
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Running Backend Python Files
+To run a backend Python file, use the following command:
+python3 app.py
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
----
+### Deployment
+To deploy this application to Heroku, follow these steps:
 
-Happy coding!
+1. Login to Heroku:
+    heroku login
+2. Create a new Heroku app:
+    heroku create [Heroku App](https://socialorangeapi-e92b8d7040bd.herokuapp.com/)
+3. Deploy the application:
+    git push heroku main
+4. Run migrations on Heroku:
+    heroku run python manage.py migrate
+5. Open the application:
+    heroku open
+
+
+### Contributing
+If you wish to contribute to this project, please fork the repository and submit a pull request.
+
+### License
+This project is licensed under the MIT License.
+
+Feel free to customize this `README.md` file further based on your specific project details and requirements.
