@@ -115,6 +115,14 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'https://8000-andersh82-socialorangea-wzh4t0giyfx.ws-eu114.gitpod.io',
+    'https://socialorangeapi-e92b8d7040bd.herokuapp.com',
+    'https://localhost',
+    'https://127.0.0.1',
+]
+
 if 'CLIENT_ORIGIN' in os.environ:
      CORS_ALLOWED_ORIGINS = [
          os.environ.get('CLIENT_ORIGIN')
