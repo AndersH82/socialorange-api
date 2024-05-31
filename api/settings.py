@@ -39,6 +39,8 @@ REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%d %b %Y',
 }
 
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend', 'allauth.account.auth_backends.AuthenticationBackend']
+
 REST_USE_JWT = True
 SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('JWT',),
