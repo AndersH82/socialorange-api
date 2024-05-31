@@ -7,6 +7,27 @@ from .settings import (
     JWT_AUTH_SECURE,
 )
 
+def login_route(request):
+    response = Response()
+    # Assuming you have obtained the tokens
+    access_token = "your_access_token"
+    refresh_token = "your_refresh_token"
+    
+    response.set_cookie(
+        key=JWT_AUTH_COOKIE,
+        value=access_token,
+        httponly=True,
+        samesite=JWT_AUTH_SAMESITE,
+        secure=JWT_AUTH_SECURE,
+    )
+    response.set_cookie(
+        key=JWT_AUTH_REFRESH_COOKIE,
+        value=refresh_token,
+        httponly=True,
+        samesite=JWT_AUTH_SAMESITE,
+        secure=JWT_AUTH_SECURE,
+    )
+    return response
 
 @api_view()
 def root_route(request):
@@ -15,7 +36,6 @@ def root_route(request):
     })
 
 
-# dj-rest-auth logout view fix
 @api_view(['POST'])
 def logout_route(request):
     response = Response()

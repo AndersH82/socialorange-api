@@ -40,7 +40,7 @@ REST_FRAMEWORK = {
 
 REST_USE_JWT = True
 JWT_AUTH_SECURE = True
-JWT_AUTH_COOKIE = 'jwt-auth'
+JWT_AUTH_COOKIE = 'my-app-token'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
 
@@ -89,14 +89,20 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'dj_rest_auth.registration',
     'corsheaders',
-
     'profiles',
     'posts',
     'comments',
     'likes',
     'followers',
 ]
+
 SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
