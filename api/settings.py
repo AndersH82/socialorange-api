@@ -48,7 +48,7 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 JWT_AUTH_SECURE = True
-JWT_AUTH_COOKIE = 'my-app-auth'
+JWT_AUTH_COOKIE = 'api-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
 
