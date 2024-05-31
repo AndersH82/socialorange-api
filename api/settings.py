@@ -69,7 +69,7 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-andersh82-socialorangea-wzh4t0giyfx.ws-eu114.gitpod.io',
     'https://socialorangeapi-e92b8d7040bd.herokuapp.com',
-    'https://localhost',
+    'https://localhost:3000',
     'https://127.0.0.1',
 ]
 
