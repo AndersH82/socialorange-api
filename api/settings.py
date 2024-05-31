@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 import os
 import dj_database_url
 import re
@@ -39,6 +40,11 @@ REST_FRAMEWORK = {
 }
 
 REST_USE_JWT = True
+SIMPLE_JWT = {
+    'AUTH_HEADER_TYPES': ('JWT',),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+}
 JWT_AUTH_SECURE = not os.environ.get('DEV', False)
 JWT_AUTH_COOKIE = 'my-app-token'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
