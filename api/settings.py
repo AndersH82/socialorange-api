@@ -39,7 +39,7 @@ REST_FRAMEWORK = {
 }
 
 REST_USE_JWT = True
-JWT_AUTH_SECURE = True
+JWT_AUTH_SECURE = not os.environ.get('DEV', False)
 JWT_AUTH_COOKIE = 'my-app-token'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
@@ -55,7 +55,7 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
@@ -97,12 +97,6 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
-
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-)
-
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
