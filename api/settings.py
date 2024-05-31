@@ -48,7 +48,7 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 JWT_AUTH_SECURE = True
-JWT_AUTH_COOKIE = 'my-app-auth'
+JWT_AUTH_COOKIE = 'api-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
 
@@ -122,16 +122,16 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
-if 'CLIENT_ORIGIN' in os.environ:
+if 'CLIENT_ORIGIN' in os.environ and 'CLIENT_ORIGIN_LOCAL' in os.environ:
     CORS_ALLOWED_ORIGINS = [
-        os.environ.get('CLIENT_ORIGIN')
+        os.environ.get('CLIENT_ORIGIN'),
+        os.environ.get('CLIENT_ORIGIN_LOCAL')
     ]
 else:
     CORS_ALLOWED_ORIGINS = [
-        'http://localhost:3000'
-    ]
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-        r"^https://.*\.gitpod\.io$",
+        'https://socialorange-8e2adf553f1c.herokuapp.com',
+        'https://3000-andersh82-socialorange-52htwm8ewta.ws-eu114.gitpod.io',
+        'http://localhost:3000',
     ]
 
 CORS_ALLOW_CREDENTIALS = True
