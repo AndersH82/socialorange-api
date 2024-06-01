@@ -77,9 +77,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
-    'https://socialorangeapi-e92b8d7040bd.herokuapp.com',
+    'localhost',
+    '8000-andersh82-socialorangea-wzh4t0giyfx.ws-eu114.gitpod.io',
+    'socialorangeapi-e92b8d7040bd.herokuapp.com',
+    '127.0.0.1',
 ]
-
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-andersh82-socialorangea-wzh4t0giyfx.ws-eu114.gitpod.io',
@@ -131,9 +133,9 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
-
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://socialorange-8e2adf553f1c.herokuapp.com",
 ]
 
 if 'CLIENT_ORIGIN' in os.environ:
