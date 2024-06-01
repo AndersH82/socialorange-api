@@ -77,10 +77,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
-    'localhost:3000',
-    '8000-andersh82-socialorangea-wzh4t0giyfx.ws-eu114.gitpod.io',
-    'socialorangeapi-e92b8d7040bd.herokuapp.com',
-    '127.0.0.1',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
