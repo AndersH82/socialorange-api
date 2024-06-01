@@ -79,6 +79,7 @@ ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
 ]
 
+
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-andersh82-socialorangea-wzh4t0giyfx.ws-eu114.gitpod.io',
     'https://socialorangeapi-e92b8d7040bd.herokuapp.com',
