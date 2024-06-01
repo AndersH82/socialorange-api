@@ -77,6 +77,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
+    'https://socialorangeapi-e92b8d7040bd.herokuapp.com',
 ]
 
 
