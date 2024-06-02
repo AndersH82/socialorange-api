@@ -73,6 +73,9 @@ CSRF_TRUSTED_ORIGINS = [
     'https://127.0.0.1',
 ]
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
 # Application definition
 
 INSTALLED_APPS = [

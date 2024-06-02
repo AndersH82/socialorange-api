@@ -92,18 +92,90 @@ python3 app.py
 
 
 ### Deployment
+
+# Social Media API
+
+This project is an API built using Django, which provides functionalities for commenting, liking, posting, and managing user profiles. It's designed to serve as a backend for a social media platform.
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.x
+- Django
+
+### Installation
+
+1. Clone the repository:
+    ```sh
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
+
+2. Create and activate a virtual environment:
+    ```sh
+    python -m venv venv
+    source venv/bin/activate 
+    ```
+
+3. Install dependencies:
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+4. Apply migrations:
+    ```sh
+    python manage.py migrate
+    ```
+
+5. Run the development server:
+    ```sh
+    python manage.py runserver
+    ```
+
+6. Access the application by opening your web browser and going to `http://127.0.0.1:8000/`.
+
+
+
+## Deployment
+
 To deploy this application to Heroku, follow these steps:
 
-1. Login to Heroku:
+1. **Login to Heroku:**
+    ```sh
     heroku login
-2. Create a new Heroku app:
-    heroku create [Heroku App](https://socialorangeapi-e92b8d7040bd.herokuapp.com/)
-3. Deploy the application:
+    ```
+
+2. **Create a new Heroku app:**
+    ```sh
+    heroku create <your-app-name>
+    ```
+
+3. **Set environment variables:**
+    ```sh
+    heroku config:set SECRET_KEY=<your-secret-key>
+    heroku config:set DEBUG=False
+    ```
+
+4. **Add Heroku Postgres:**
+    ```sh
+    heroku addons:create heroku-postgresql:hobby-dev
+    ```
+
+5. **Deploy the application:**
+    ```sh
     git push heroku main
-4. Run migrations on Heroku:
+    ```
+
+6. **Run migrations on Heroku:**
+    ```sh
     heroku run python manage.py migrate
-5. Open the application:
+    ```
+
+7. **Open the application:**
+    ```sh
     heroku open
+    ```
 
 ## Tests
 
@@ -140,10 +212,4 @@ Vary: Accept
     "message": "Welcome to my API for SocialOrange webpage!"
 }
 ```
-### Contributing
-If you wish to contribute to this project, please fork the repository and submit a pull request.
 
-### License
-This project is licensed under the MIT License.
-
-Feel free to customize this `README.md` file further based on your specific project details and requirements.
