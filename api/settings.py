@@ -119,7 +119,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://socialorange-8e2adf553f1c.herokuapp.com",
-    "https://socialorangeapi-e92b8d7040bd.herokuapp.com",
+    "https://socialorangeapi-e92b8d7040bd.herokuapp.com"
 ]
 
 if 'CLIENT_ORIGIN' in os.environ:
