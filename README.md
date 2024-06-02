@@ -105,7 +105,41 @@ To deploy this application to Heroku, follow these steps:
 5. Open the application:
     heroku open
 
+## Tests
 
+
+### Manual Tests
+
+POST Test
+
+```
+POST /posts/
+HTTP 201 Created
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+```
+COMMENTS Test
+```
+POST /comments/
+HTTP 201 Created
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+```
+
+LOG IN Test
+```
+GET /
+HTTP 200 OK
+Allow: GET, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+{
+    "message": "Welcome to my API for SocialOrange webpage!"
+}
+```
 ### Contributing
 If you wish to contribute to this project, please fork the repository and submit a pull request.
 
