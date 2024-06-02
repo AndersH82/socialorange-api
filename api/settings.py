@@ -60,11 +60,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    os.environ.get('ALLOWED_HOST'),
     'localhost',
-    '8000-andersh82-socialorangea-wzh4t0giyfx.ws-eu114.gitpod.io',
-    'socialorangeapi-e92b8d7040bd.herokuapp.com',
     '127.0.0.1',
+    '8000-andersh82-socialorangea-wzh4t0giyfx.ws-eu114.gitpod.io',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
