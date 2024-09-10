@@ -47,14 +47,17 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    '*',
     'localhost',
     '127.0.0.1',
+    '8000-andersh82-socialorangea-mh7bu9b273z.ws.codeinstitute-ide.net'
     '3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
     'socialorangeapi-e92b8d7040bd.herokuapp.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
+    'https://8000-andersh82-socialorangea-mh7bu9b273z.ws.codeinstitute-ide.net',
     'https://socialorangeapi-e92b8d7040bd.herokuapp.com',
     'https://localhost:3000',
     'https://127.0.0.1',
@@ -105,10 +108,12 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
     "http://localhost:3000",
     "https://socialorange-8e2adf553f1c.herokuapp.com",
     "https://socialorangeapi-e92b8d7040bd.herokuapp.com",
-    "https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net"
+    "https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net",
+    "https://8000-andersh82-socialorangea-mh7bu9b273z.ws.codeinstitute-ide.net"
 ]
 
 if 'CLIENT_ORIGIN' in os.environ:
