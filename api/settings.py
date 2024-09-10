@@ -1,8 +1,6 @@
 import os
 import re
 from pathlib import Path
-from datetime import timedelta
-import dj_database_url
 
 if os.path.exists('env.py'):
     import env
@@ -22,8 +20,7 @@ REST_FRAMEWORK = {
         if 'DEV' in os.environ
         else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
     )],
-    'DEFAULT_PAGINATION_CLASS':
-        'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
     'DATETIME_FORMAT': '%d %b %Y',
 }
@@ -31,7 +28,6 @@ if 'DEV' not in os.environ:
     REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
         'rest_framework.renderers.JSONRenderer',
     ]
-
 
 REST_USE_JWT = True
 JWT_AUTH_SECURE = True
@@ -47,10 +43,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '*',
     'localhost',
     '127.0.0.1',
-    '8000-andersh82-socialorangea-mh7bu9b273z.ws.codeinstitute-ide.net'
+    '8000-andersh82-socialorangea-mh7bu9b273z.ws.codeinstitute-ide.net',
     '3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
     'socialorangeapi-e92b8d7040bd.herokuapp.com',
 ]
@@ -65,7 +60,6 @@ CSRF_TRUSTED_ORIGINS = [
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -155,7 +149,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-print('connect')
 
 AUTH_PASSWORD_VALIDATORS = [
     {
