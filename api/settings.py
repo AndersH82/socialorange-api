@@ -49,7 +49,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    '8000-andersh82-socialorangea-wzh4t0giyfx.ws-eu114.gitpod.io',
+    '3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
     'socialorangeapi-e92b8d7040bd.herokuapp.com',
 ]
 
