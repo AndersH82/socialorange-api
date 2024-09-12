@@ -57,14 +57,16 @@ CORS_ALLOWED_ORIGINS = [
     'https://127.0.0.1:3000',
 ]
 
+CORS_ALLOW_CREDENTIALS = True
+
 CSRF_TRUSTED_ORIGINS = [
     'https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
     'https://localhost:3000',
     'https://127.0.0.1:3000',
 ]
 
+CSRF_COOKIE_SECURE = True
 
-CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
@@ -103,6 +105,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
