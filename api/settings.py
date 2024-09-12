@@ -45,6 +45,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
     'socialorangeapi-e92b8d7040bd.herokuapp.com',
     '8000-andersh82-socialorangea-mh7bu9b273z.ws.codeinstitute-ide.net'
     ]
