@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenRefreshView
-from .views import token_refresh_view, root_route, clear_cookies_view
+from .views import token_refresh_view, root_route, clear_cookies_view, logout_route  # Import logout_route
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -17,7 +17,7 @@ urlpatterns = [
 
     # dj-rest-auth URLs
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
-    path('dj-rest-auth/logout/', logout_route),
+    path('dj-rest-auth/logout/', logout_route),  # Use the imported logout_route
     path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
 
     # Custom views

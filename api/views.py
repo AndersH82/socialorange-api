@@ -3,6 +3,8 @@ from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.conf import settings
+from django.shortcuts import redirect
+from django.contrib.auth import logout
 
 @api_view(['POST'])
 def token_refresh_view(request):
@@ -32,3 +34,7 @@ def clear_cookies_view(request):
     response.delete_cookie(settings.JWT_AUTH_COOKIE, path='/')
     response.delete_cookie(settings.JWT_AUTH_REFRESH_COOKIE, path='/')
     return response
+
+def logout_route(request):
+    logout(request)
+    return redirect('/')
