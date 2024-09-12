@@ -40,7 +40,7 @@ REST_AUTH_SERIALIZERS = {
 }
 
 SECRET_KEY = os.getenv('SECRET_KEY')
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -53,6 +53,7 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     'https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
     'https://8000-andersh82-socialorangea-mh7bu9b273z.ws.codeinstitute-ide.net',
+    'https://socialorange-8e2adf553f1c.herokuapp.com',
     'https://socialorangeapi-e92b8d7040bd.herokuapp.com',
     'https://localhost:3000',
     'https://127.0.0.1',
