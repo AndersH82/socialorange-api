@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenRefreshView
-from .views import token_refresh_view, root_route, clear_cookies_view
+from .views import root_route, logout_route
 from django.conf import settings
 from django.conf.urls.static import static
 
