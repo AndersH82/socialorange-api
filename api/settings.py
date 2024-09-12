@@ -67,6 +67,8 @@ CSRF_TRUSTED_ORIGINS = [
 
 CSRF_COOKIE_SECURE = True
 
+SESSION_COOKIE_AGE = 1209600  # 2 weeks
+SESSION_SAVE_EVERY_REQUEST = True
 
 # Application definition
 
