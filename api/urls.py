@@ -21,7 +21,7 @@ urlpatterns = [
     path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
 
     # Custom views
-    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('dj-rest-auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('logout/', clear_cookies_view, name='logout'),
 
     # Include other app URLs
