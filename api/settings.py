@@ -48,7 +48,7 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -101,6 +101,7 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
 
 CSRF_TRUSTED_ORIGINS = [
     'https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
+    'https://8000-andersh82-socialorangea-mh7bu9b273z.ws.codeinstitute-ide.net',
     'https://localhost:3000',
     'https://127.0.0.1:3000',
 ]
