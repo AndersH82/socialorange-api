@@ -88,7 +88,11 @@ CORS_ALLOW_HEADERS = [
 ]
 
 if 'CLIENT_ORIGIN' in os.environ:
-    CORS_ALLOWED_ORIGINS.append(os.environ.get('CLIENT_ORIGIN'))
+    cors_origin = os.environ.get('CLIENT_ORIGIN')
+    CORS_ALLOWED_ORIGINS.extend([
+        f"{'https://' if not cors_origin.startswith('http') else ''}{cors_origin}",
+        f"{'wss://' if not cors_origin.startswith('http') else ''}{cors_origin}"
+    ])
 
 if 'CLIENT_ORIGIN_DEV' in os.environ:
     match = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE)
