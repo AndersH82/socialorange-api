@@ -70,6 +70,18 @@ CORS_ALLOW_METHODS = [
     'PUT',
 ]
 
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
 if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS.append(os.environ.get('CLIENT_ORIGIN'))
 
