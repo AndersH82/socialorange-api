@@ -48,7 +48,7 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -57,6 +57,7 @@ ALLOWED_HOSTS = [
     '8000-andersh82-socialorangea-mh7bu9b273z.ws.codeinstitute-ide.net',
     '3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net'
     ]
+
 
 CORS_ALLOWED_ORIGINS = [
     'https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
