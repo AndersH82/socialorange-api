@@ -93,6 +93,7 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
             rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
         ]
 
+
 CSRF_TRUSTED_ORIGINS = [
     'https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
     'https://localhost:3000',
