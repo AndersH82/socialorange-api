@@ -65,69 +65,6 @@ ALLOWED_HOSTS = [
     ]
 
 
-CORS_ALLOWED_ORIGINS = [
-    'https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
-    'https://localhost:3000',
-    'https://127.0.0.1:3000',
-]
-
-CORS_ALLOW_CREDENTIALS = True
-
-CORS_ALLOW_METHODS = [
-    'DELETE',
-    'GET',
-    'OPTIONS',
-    'PATCH',
-    'POST',
-    'PUT',
-]
-
-CORS_ALLOW_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
-]
-
-CORS_EXPOSE_HEADERS = [
-    'Content-Length',
-    'X-Kuma-Revision',
-]
-
-CORS_ALLOWED_ORIGIN_REGEXES = [
-    r'^https://\w+\.example\.com$',
-]
-
-if 'CLIENT_ORIGIN' in os.environ:
-    cors_origin = os.environ.get('CLIENT_ORIGIN')
-    CORS_ALLOWED_ORIGINS.extend([
-        f"{'https://' if not cors_origin.startswith('http') else ''}{cors_origin}",
-        f"{'wss://' if not cors_origin.startswith('http') else ''}{cors_origin}"
-    ])
-
-if 'CLIENT_ORIGIN_DEV' in os.environ:
-    match = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE)
-    if match:
-        extracted_url = match.group(0)
-        CORS_ALLOWED_ORIGIN_REGEXES = [
-            rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
-        ]
-
-
-CSRF_TRUSTED_ORIGINS = [
-    'https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
-    'https://8000-andersh82-socialorangea-mh7bu9b273z.ws.codeinstitute-ide.net',
-    'https://localhost:3000',
-    'https://127.0.0.1:3000',
-]
-
-CSRF_COOKIE_SECURE = True
-
 
 # Application definition
 
