@@ -88,8 +88,6 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
 ]
 
-CORS_URLS_REGEX = r'^/api/urls/.*$'
-
 CORS_EXPOSE_HEADERS = [
     'Content-Length',
     'X-Kuma-Revision',
