@@ -31,11 +31,16 @@ if 'DEV' not in os.environ:
     
 
 REST_USE_JWT = True
-JWT_AUTH_SECURE = False
-JWT_AUTH_COOKIE = 'your_jwt_auth_cookie'
-JWT_AUTH_REFRESH_COOKIE = 'your_jwt_auth_refresh_cookie'
-JWT_AUTH_SAMESITE = 'Lax'
+JWT_AUTH_SECURE = True
+JWT_AUTH_COOKIE = 'my-app-auth'
+JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
+JWT_AUTH_SAMESITE = 'None'
 JWT_AUTH_HTTPONLY = True
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+}
 
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'api.serializers.CurrentUserSerializer'
