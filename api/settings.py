@@ -76,7 +76,17 @@ CORS_ALLOW_METHODS = [
     'PUT',
 ]
 
-CORS_ALLOW_ALL_HEADERS = True
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
 
 CORS_URLS_REGEX = r'^/api/.*$'
 
@@ -147,6 +157,7 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -160,6 +171,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
 ]
+
 ROOT_URLCONF = 'api.urls'
 
 TEMPLATES = [
