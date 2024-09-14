@@ -89,6 +89,8 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
 
 CORS_ORIGIN_ALLOW_ALL = False
 
+CORS_ALLOW_CREDENTIALS = True
+
 # Application definition
 
 INSTALLED_APPS = [
