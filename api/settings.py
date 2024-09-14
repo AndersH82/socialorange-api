@@ -78,6 +78,16 @@ CORS_ALLOW_METHODS = [
 
 CORS_ALLOW_ALL_HEADERS = True
 
+CORS_URLS_REGEX = r'^/api/.*$'
+
+CORS_EXPOSE_HEADERS = [
+    'Content-Length',
+    'X-Kuma-Revision',
+]
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r'^https://\w+\.example\.com$',
+]
 
 if 'CLIENT_ORIGIN' in os.environ:
     cors_origin = os.environ.get('CLIENT_ORIGIN')
