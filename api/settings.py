@@ -60,7 +60,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'socialorangeapi-e92b8d7040bd.herokuapp.com',
-    '8000-andersh82-socialorangea-mh7bu9b273z.ws.codeinstitute-ide.net',
+    '8000-andersh82-socialorangea-m9hmj10ucdk.ws.codeinstitute-ide.net',
     '3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net'
     ]
 
