@@ -40,12 +40,6 @@ JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
 JWT_AUTH_HTTPONLY = True
 
-SIMPLE_JWT = {
-    'AUTH_HEADER_TYPES': ('Bearer',),
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-}
-
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'api.serializers.CurrentUserSerializer'
 }
@@ -64,7 +58,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'socialorangeapi-e92b8d7040bd.herokuapp.com',
     '8000-andersh82-socialorangea-m9hmj10ucdk.ws.codeinstitute-ide.net',
-    '3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net'
+    '3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net/'
 ]
 
 # Define CORS_ALLOWED_ORIGINS as an empty list
