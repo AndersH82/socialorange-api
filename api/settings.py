@@ -28,16 +28,11 @@ REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%d %b %Y',
 }
 
-if 'DEV' not in os.environ:
-    REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
-        'rest_framework.renderers.JSONRenderer',
-    ]
-
 REST_USE_JWT = True
+JWT_AUTH_SECURE = True
 JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
-JWT_AUTH_SECURE = False  # Set to False in development
-JWT_AUTH_SAMESITE = 'Lax'
+JWT_AUTH_SAMESITE = 'None'
 JWT_AUTH_HTTPONLY = True
 
 SIMPLE_JWT = {
@@ -70,10 +65,15 @@ ALLOWED_HOSTS = [
 
 # Define CORS_ALLOWED_ORIGINS as an empty list
 CORS_ALLOWED_ORIGINS = [
+    'andersh82-socialorangea-m9hmj10ucdk.ws.codeinstitute-ide.net'
     'https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
     'https://localhost:3000',
     'https://127.0.0.1:3000',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ALLOW_CREDENTIALS = True
+
 
 if 'CLIENT_ORIGIN' in os.environ:
     cors_origin = os.environ.get('CLIENT_ORIGIN')
@@ -89,9 +89,6 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
         CORS_ALLOWED_ORIGIN_REGEXES = [
             rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
         ]
-
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ALLOW_CREDENTIALS = True
 
 # Enable CSRF protection
 CSRF_ENABLED = True
@@ -135,13 +132,12 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -165,10 +161,6 @@ TEMPLATES = [
         },
     },
 ]
-
-ACCOUNT_AUTHENTICATION_METHOD = 'username'
-ACCOUNT_EMAIL_REQUIRED = False
-ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 WSGI_APPLICATION = 'api.wsgi.application'
 
