@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'corsheaders',
     'cloudinary',
     'rest_framework',
     'django_filters',
@@ -86,6 +87,7 @@ SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'allauth.account.middleware.AccountMiddleware',
@@ -93,6 +95,16 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Define CORS_ALLOWED_ORIGINS
+CORS_ALLOWED_ORIGINS = [
+    'https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
+    'https://localhost:3000',
+    'https://127.0.0.1:3000',
+]
+
+# Allow credentials (cookies, authorization headers, etc.)
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'api.urls'
 
