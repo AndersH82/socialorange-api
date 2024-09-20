@@ -65,7 +65,6 @@ ALLOWED_HOSTS = [
 
 # Define CORS_ALLOWED_ORIGINS as an empty list
 CORS_ALLOWED_ORIGINS = [
-    'andersh82-socialorangea-m9hmj10ucdk.ws.codeinstitute-ide.net'
     'https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
     'https://localhost:3000',
     'https://127.0.0.1:3000',
@@ -132,12 +131,12 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
