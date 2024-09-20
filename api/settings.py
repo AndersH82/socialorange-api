@@ -106,6 +106,12 @@ CORS_ALLOWED_ORIGINS = [
 # Allow credentials (cookies, authorization headers, etc.)
 CORS_ALLOW_CREDENTIALS = True
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
+    'https://localhost:3000',
+    'https://127.0.0.1:3000',
+]
+
 ROOT_URLCONF = 'api.urls'
 
 TEMPLATES = [
