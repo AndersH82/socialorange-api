@@ -29,6 +29,8 @@ REST_FRAMEWORK = {
 }
 
 REST_USE_JWT = True
+JWT_ACCESS_TOKEN_LIFETIME = timedelta(minutes=60)
+JWT_REFRESH_TOKEN_LIFETIME = timedelta(days=30)
 JWT_AUTH_SECURE = True
 JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
