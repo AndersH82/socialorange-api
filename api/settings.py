@@ -7,6 +7,16 @@ import dj_database_url
 if os.path.exists('env.py'):
     import env
 
+CORS_ALLOWED_ORIGINS = ['https://8000-andersh82-socialorangea-m9hmj10ucdk.ws.codeinstitute-ide.net']
+
+if 'CLIENT_ORIGIN' in os.environ:
+    cors_origin = os.environ.get('CLIENT_ORIGIN')
+    CORS_ALLOWED_ORIGINS.extend([
+        f"{'https://' if not cors_origin.startswith('http') else ''}{cors_origin}",
+        f"{'wss://' if not cors_origin.startswith('http') else ''}{cors_origin}"
+    ])
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -14,18 +24,18 @@ CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication'
-        if 'DEV' in os.environ
-        else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ],
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
-    'DATETIME_FORMAT': '%d %b %Y',
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
 }
 
 REST_USE_JWT = True
@@ -63,7 +73,7 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -73,30 +83,7 @@ ALLOWED_HOSTS = [
     '3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net'
 ]
 
-# Define CORS_ALLOWED_ORIGINS as an empty list
-CORS_ALLOWED_ORIGINS = [
-    'https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
-    'https://localhost:3000',
-    'https://127.0.0.1:3000',
-]
 
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ALLOW_CREDENTIALS = True
-
-if 'CLIENT_ORIGIN' in os.environ:
-    cors_origin = os.environ.get('CLIENT_ORIGIN')
-    CORS_ALLOWED_ORIGINS.extend([
-        f"{'https://' if not cors_origin.startswith('http') else ''}{cors_origin}",
-        f"{'wss://' if not cors_origin.startswith('http') else ''}{cors_origin}"
-    ])
-
-if 'CLIENT_ORIGIN_DEV' in os.environ:
-    match = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE)
-    if match:
-        extracted_url = match.group(0)
-        CORS_ALLOWED_ORIGIN_REGEXES = [
-            rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
-        ]
 
 # Enable CSRF protection
 CSRF_ENABLED = True
@@ -104,7 +91,7 @@ CSRF_ENABLED = True
 # CSRF settings
 CSRF_COOKIE_NAME = 'csrftoken'
 CSRF_COOKIE_HTTPONLY = True
-CSRF_COOKIE_SECURE = True  # Set to True in production
+CSRF_COOKIE_SECURE = False  # Set to True in production
 CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
 
 # Application definition
@@ -206,6 +193,16 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# Define CORS_ALLOWED_ORIGINS as an empty list
+CORS_ALLOWED_ORIGINS = [
+    'https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net',
+    'https://localhost:3000',
+    'https://127.0.0.1:3000',
+]
+
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ALLOW_CREDENTIALS = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
