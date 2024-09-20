@@ -7,7 +7,9 @@ import dj_database_url
 if os.path.exists('env.py'):
     import env
 
-CORS_ALLOWED_ORIGINS = ['https://8000-andersh82-socialorangea-m9hmj10ucdk.ws.codeinstitute-ide.net']
+CORS_ALLOWED_ORIGINS = ['https://8000-andersh82-socialorangea-m9hmj10ucdk.ws.codeinstitute-ide.net',
+                        'https://3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net'
+]
 
 if 'CLIENT_ORIGIN' in os.environ:
     cors_origin = os.environ.get('CLIENT_ORIGIN')
