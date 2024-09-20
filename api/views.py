@@ -1,19 +1,17 @@
-from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import AllowAny
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .settings import (
-    JWT_AUTH_COOKIE,
-    JWT_AUTH_REFRESH_COOKIE,
-    JWT_AUTH_SAMESITE,
+    JWT_AUTH_COOKIE, JWT_AUTH_REFRESH_COOKIE, JWT_AUTH_SAMESITE,
     JWT_AUTH_SECURE,
 )
 
-@api_view(['GET'])
-@permission_classes([AllowAny])
+
+@api_view()
 def root_route(request):
     return Response({
-        "message": "Welcome to my API for SocialOrange webpage!"
+        "message": "Welcome to the API thats for SocialOrange webpage!"
     })
+
 
 @api_view(['POST'])
 def logout_route(request):
