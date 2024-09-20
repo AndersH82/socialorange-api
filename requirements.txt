@@ -1,4 +1,4 @@
-asgiref==3.3.4
+asgiref==3.8.1
 axios==0.4.0
 certifi==2024.2.2
 click==8.1.7
