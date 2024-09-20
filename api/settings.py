@@ -50,7 +50,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-andersh82-socialorangea-m9hmj10ucdk.ws.codeinstitute-ide.net',
-    'https://socialorangeapi-e92b8d7040bd.herokuapp.com/',
+    'socialorangeapi-e92b8d7040bd.herokuapp.com',
     'localhost',
 ]
 
