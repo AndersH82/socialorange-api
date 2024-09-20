@@ -29,6 +29,7 @@ REST_FRAMEWORK = {
 }
 
 REST_USE_JWT = True
+JWT_AUTH_SECURE = True
 JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
@@ -67,7 +68,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'socialorangeapi-e92b8d7040bd.herokuapp.com',
     '8000-andersh82-socialorangea-m9hmj10ucdk.ws.codeinstitute-ide.net',
-    '3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net/'
+    '3000-andersh82-socialorange-tsgvoq88woh.ws.codeinstitute-ide.net'
 ]
 
 # Define CORS_ALLOWED_ORIGINS as an empty list
@@ -79,7 +80,6 @@ CORS_ALLOWED_ORIGINS = [
 
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ALLOW_CREDENTIALS = True
-
 
 if 'CLIENT_ORIGIN' in os.environ:
     cors_origin = os.environ.get('CLIENT_ORIGIN')
